@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ 
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+   <!-- FontAwesome -->
+   <script src="https://kit.fontawesome.com/5ce2677feb.js" crossorigin="anonymous"></script>
+   <!-- Sweetalert -->
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+   <title>Pet Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header> 
+    
+    	<!-- NAVBAR MENU -->
+     
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top custom.navbar fixed-top" id="navbar">
+              <a class="navbar-brand" href="index.html" >
+                <img src="img/logo.png" alt="" style="width: 50px;height:50px;" >
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+  
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="nav navbar-nav mx-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Inicio <span class="sr-only">Home</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#productos">Productos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                  </li>
+                  <li class="nav-item nav nav-pills dropdown">
+                      <a href="#servicios" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+                      <div class="dropdown-menu dropdown-menu-right " aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="servicios.html">Paseadores</a>
+                        <a class="dropdown-item " href="#">Peluqueria</a>
+                        <a class="dropdown-item " href="#">Baño</a>
+                      </div>
+                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="contacto.html">Contacto</a>
+                  </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right ml-auto">
+                  <li class="nav-item"><a href="#" class="nav-link"><i class="fab fa-facebook-square"  style="font-size:30px"></i></a></li>	
+                  <li class="nav-item"><a href="#" class="nav-link"><i class="fab fa-instagram"  style="font-size:30px"></i></a></li>	
+                  <!-- Button trigger modal -->
+              
+                  <li class="nav-item mr-3"><a class="nav-link" data-toggle="modal" data-target="#loginModal"><i class="far fa-user"></i> login</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+  </header>
+  
+  <!---!Modal-->
+  <div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+  <!-- Modal content-->
+  <div class="modal-content">
+    <div class="modal-header bg-login">
+      <h4 class="modal-title w-100 text-center text-white">Ingresar a mi cuenta</h4>
+      <button type="button" class="close" data-dismiss="modal"> &times;</button>
+    </div>
+    <div class="modal-body">
+      <div role="tabpanel">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item" role="presentation" class="active"><a href="#uploadTab" class="nav-link text-black" aria-controls="uploadTab" aria-selected="false" role="tab" data-toggle="tab">Iniciar sesión</a>
+  
+          </li>
+          <li class="nav-item" role="presentation"><a href="#browseTab" class="nav-link" aria-controls="browseTab" aria-selected="false" role="tab" data-toggle="tab">Crear
+              cuenta</a>
+  
+          </li>
+        </ul>
+        <!-- Tab panel -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane fade show active" id="uploadTab">
+            <!-- tab iniciar sesion -->
+            <form action="login.php" method="POST" class="needs-validation" id="loginForm">
+              <div class="input-group form-group md-form">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-user"></i></span>
+                </div>
+                <label class="sr-only" for="email">Email</label>
+                <input type="text" class="form-control input-sm" placeholder="Email" id="email" name="email" required>
+              </div>
+              <div class="input-group form-group md-form">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-key"></i></span>
+                </div>
+                <label class="sr-only" for="password">Password</label>
+                <input type="password" class="form-control input-sm" placeholder="Password" id="password" name="password" required>
+              </div>
+              <!-- <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Remember me
+                </label>
+              </div> -->
+              <button type="submit" class="btn btn-warning btn-block" onclick="">Ingresar</button>
+              <button type="button" class="btn btn-light btn-block " data-dismiss="modal">Cancel</button>
+              <div class="modal-text">
+                
+              </div>
+            </form>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="browseTab">
+            <!-- Tab registrarse -->
+            <div class="register-form">
+              <form action="registrarse.php" method="post" id="formulario">
+                <div class="card shadow justify-center">
+                  <div class="card-body bg-light">
+                    <div class="form-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresar nombre" autofocus required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-at"></i></span>
+                        <input type="email" class="form-control" name="email" id="mail" placeholder="Ingresar email" required>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        <input type="text" class="form-control" name="password" id="pass" placeholder="Ingresar password" required>
+                      </div>
+                  
+                    </div>
+                    <button type="submit" class="btn btn-info btn-block" onclick="validar()">Registrarse</button>
+                    <button type="button" class="btn btn-light btn-block " data-dismiss="modal">Cancel</button>
+                
+                  </div>
+                </div>
+              </form>
+            </div><!-- /registrarse -->
+         </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+
+<!---!Modal-->
+<div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header bg-login">
+        <h4 class="modal-title w-100 text-center text-white">Ingresar a mi cuenta</h4>
+        <button type="button" class="close" data-dismiss="modal"> &times;</button>
+      </div>
+      <div class="modal-body">
+        <div role="tabpanel">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation" class="active"><a href="#loginTab" class="nav-link text-black" aria-controls="loginTab" aria-selected="false" role="tab" data-toggle="tab">Iniciar sesión</a>
+
+            </li>
+            <li class="nav-item" role="presentation"><a href="#registraTab" class="nav-link" aria-controls="registraTab" aria-selected="false" role="tab" data-toggle="tab">Crear
+                cuenta</a>
+
+            </li>
+          </ul>
+          <!-- Tab panel -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade show active" id="loginTab">
+              <!-- tab iniciar sesion -->
+              <form action="login.php" method="POST" class="needs-validation" id="loginForm">
+                <div class="input-group form-group md-form">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  </div>
+                  <label class="sr-only" for="email">Email</label>
+                  <input type="text" class="form-control input-sm" placeholder="Email" id="email" name="email" required>
+                </div>
+                <div class="input-group form-group md-form">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                  </div>
+                  <label class="sr-only" for="password">Password</label>
+                  <input type="password" class="form-control input-sm" placeholder="Password" id="password" name="password" required>
+                </div>
+                <!-- <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Remember me
+                  </label>
+                </div> -->
+                <button type="submit" class="btn btn-warning btn-block" onclick="">Ingresar</button>
+                <button type="button" class="btn btn-light btn-block " data-dismiss="modal">Cancel</button>
+                <div class="modal-text">
+                  
+                </div>
+              </form>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="registraTab">
+              <!-- Tab registrarse -->
+              <div class="register-form">
+                <form action="registrarse.php" method="post" id="formulario">
+                  <div class="card shadow justify-center">
+                    <div class="card-body bg-light">
+                      <div class="form-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-user"></i></span>
+                          <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresar nombre" autofocus required>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-at"></i></span>
+                          <input type="email" class="form-control" name="email" id="mail" placeholder="Ingresar email" required>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-key"></i></span>
+                          <input type="text" class="form-control" name="password" id="pass" placeholder="Ingresar password" required>
+                        </div>
+                    
+                      </div>
+                      <button type="submit" class="btn btn-info btn-block" onclick="validar()">Registrarse</button>
+                      <button type="button" class="btn btn-light btn-block" data-dismiss="modal">Cancel</button>
+                  
+                    </div>
+                  </div>
+                </form>
+              </div><!-- /registrarse -->
+           </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---/Modal-->
+
+  <body>
+    <!-- SERVICIOS -->
+    <section id="servicio1" class="banner" data-stellar-background-ratio="0.5" >
+      <div class="container">
+               <div class="row">
+                   <div class="col-md-8">
+                       <div class="left-side">
+                           <h1>Contacta con un<br> paseador de perros 
+                           </h1> <br>
+                           <p class="display-2">Conectamos a sus mascotas con los servicios locales de confianza.</p>
+                       <a href="contacto.html" type="button" class="btn btn-outline-light">Contacto</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+   </section>
+   <h4 class="text-center alert-danger">Por favor, inicie sesión o regístrese</h4>
+       
+        <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+   integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+   integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+  </script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+  <script src="js/dropdown-hover.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/scrolltop.js"></script>
+  <script src="js/validarInput.js"></script>
+  
+  </body>
+  </html>

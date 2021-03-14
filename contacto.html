@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <!-- Bootstrap CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+   <!-- FontAwesome -->
+   <script src="https://kit.fontawesome.com/5ce2677feb.js" crossorigin="anonymous"></script>
+   <!-- Sweetalert -->
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+   <link rel="stylesheet" href="css/magnific-popup.css">
+   <link href="css/owl.carousel.min.css" rel="stylesheet">
+  <title>Pet Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <header>
+
+  	<!-- NAVBAR MENU -->
+     
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top custom.navbar fixed-top" id="navbar">
+            <a class="navbar-brand" href="index.html" >
+              <img src="img/logo.png" alt="" style="width: 50px;height:50px;" >
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="nav navbar-nav mx-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Inicio <span class="sr-only">Home</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#productos">Productos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item nav nav-pills dropdown">
+                    <a href="#servicios" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                      data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false">Servicios</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item " href="servicios.html">Paseadores</a>
+                      <a class="dropdown-item " href="#">Peluqueria</a>
+                      <a class="dropdown-item " href="#">Baño</a>
+                    </div>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contacto.html">Contacto</a>
+                </li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right ml-auto">
+                <li class="nav-item"><a href="#" class="nav-link"><i class="fab fa-facebook-square"  style="font-size:30px"></i></a></li>	
+                <li class="nav-item"><a href="#" class="nav-link"><i class="fab fa-instagram"  style="font-size:30px"></i></a></li>	
+                <!-- Button trigger modal -->
+            
+                <li class="nav-item mr-3"><a class="nav-link" data-toggle="modal" data-target="#loginModal"><i class="far fa-user"></i> login</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+</header>
+
+<!---!Modal-->
+<div id="loginModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header bg-login">
+        <h4 class="modal-title w-100 text-center text-white">Ingresar a mi cuenta</h4>
+        <button type="button" class="close" data-dismiss="modal"> &times;</button>
+      </div>
+      <div class="modal-body">
+        <div role="tabpanel">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item" role="presentation" class="active"><a href="#loginTab" class="nav-link text-black" aria-controls="loginTab" aria-selected="false" role="tab" data-toggle="tab">Iniciar sesión</a>
+
+            </li>
+            <li class="nav-item" role="presentation"><a href="#registraTab" class="nav-link" aria-controls="registraTab" aria-selected="false" role="tab" data-toggle="tab">Crear
+                cuenta</a>
+
+            </li>
+          </ul>
+          <!-- Tab panel -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade show active" id="loginTab">
+              <!-- tab iniciar sesion -->
+              <form action="login.php" method="POST" class="needs-validation" id="loginForm">
+                <div class="input-group form-group md-form">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                  </div>
+                  <label class="sr-only" for="email">Email</label>
+                  <input type="text" class="form-control input-sm" placeholder="Email" id="email" name="email" required>
+                </div>
+                <div class="input-group form-group md-form">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                  </div>
+                  <label class="sr-only" for="password">Password</label>
+                  <input type="password" class="form-control input-sm" placeholder="Password" id="password" name="password" required>
+                </div>
+                <!-- <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Remember me
+                  </label>
+                </div> -->
+                <button type="submit" class="btn btn-warning btn-block" onclick="">Ingresar</button>
+                <button type="button" class="btn btn-light btn-block " data-dismiss="modal">Cancel</button>
+                <div class="modal-text">
+                  
+                </div>
+              </form>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="registraTab">
+              <!-- Tab registrarse -->
+              <div class="register-form">
+                <form action="registrarse.php" method="post" id="formulario">
+                  <div class="card shadow justify-center">
+                    <div class="card-body bg-light">
+                      <div class="form-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-user"></i></span>
+                          <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingresar nombre" autofocus required>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-at"></i></span>
+                          <input type="email" class="form-control" name="email" id="mail" placeholder="Ingresar email" required>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-key"></i></span>
+                          <input type="text" class="form-control" name="password" id="pass" placeholder="Ingresar password" required>
+                        </div>
+                    
+                      </div>
+                      <button type="submit" class="btn btn-info btn-block" onclick="validar()">Registrarse</button>
+                      <button type="button" class="btn btn-light btn-block" data-dismiss="modal">Cancel</button>
+                  
+                    </div>
+                  </div>
+                </form>
+              </div><!-- /registrarse -->
+           </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---/Modal-->
+
+ <body>
+    <!-- CONTACTO -->
+    <section id="contacto" class=" home" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="left-side">
+              <h1>Tiene una consulta?</h1>
+              <p>Complete el formulario y<br> nos pondremos en contacto.
+              </p>
+              <a href="#contact-form" type="button" class="btn btn-outline-light">Ver mas</a>
+              <a href="servicios.html"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-center contact-info mb-5">
+            <img src="img/whasapp.png" class="card-img-top" alt="...">
+            <h6>11 2222-3333</h6>
+          </div>
+          <div class="col-md-4 text-center contact-info mb-5">
+            <img src="img/email.png" class="card-img-top " alt="...">
+            <p>
+              <a href="mailto:contacto@petshop.com"> contacto@petshop.com</a>
+            </p>
+          </div>
+          <div class="col-md-4 text-center contact-info mb-5">
+            <img src="img/phone.png" class="card-img-top" alt="...">
+            <p>(11) 2222-4445</p>
+          </div>
+        </div><!-- / row -->
+      </div><!-- / container -->
+    </section>
+
+    <!-- -->
+    <section id="contact">
+      <div class="container-fluid">
+        <div class="section-header">
+          <h3 class=" text-success  p-5">
+            <p>Si tiene alguna pregunta, sugerencia u otra solicitud</p>
+          </h3>
+        </div>
+        <div class="container">
+          <div class="row ">
+            <div class="col-lg-6">
+              <div class="map mb-4 mb-lg-0">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.5925546840303!2d-58.379787484871905!3d-34.61446318045672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccad67764ed7d%3A0x6fae509eb6477f74!2sPiedras%20543%2C%20C1070%20AAK%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1605924099355!5m2!1ses!2sar"
+                  frameborder="0" style="border:0; width: 100%; height: 312px;" allowfullscreen></iframe>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-8">
+              <p> ¡No dude en contactarnos!</p>
+              <hr>
+              <form action="contacto.php" method="post" name="form" id="contact-form" role="form" target="_self"
+                class="contactForm form-box">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="nombre">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="email">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="asunto">
+                </div>
+                <div class="form-group">
+                  <textarea class="form-control" placeholder="mensaje"></textarea>
+                </div>
+                <div>
+                  <button type="submit" class="section-btn" name="enviarMail">Enviar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </section><!-- #contact -->
+    <!-- FOOTER -->
+    <!-- FOOTER -->
+    <footer id="footer" class="pt-5 pb-5" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 d-flex">
+            <div class="col-md-6 col-sm-12">
+              <div class="footer">
+                <h3>Contactanos</h3>
+                <ul>
+                  <li><span class="fa fa-envelope"></span> <a
+                      href="mailto:contacto@petshop.com">contacto@petshop.com</a></li>
+                  <li><span class="fa fa-phone"></span> <a href="https://api.whatsapp.com/send?phone=11 2222-4444"> 11
+                      2222-4444</a> </li>
+                  <li><span class="fa fa-map-marked-alt"></span> <a href="contacto.html">Piedras 543</a></li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-12 col-lg-6 col-sm-12">
+              <div class="footer-newsletter">
+                <div>
+                  <h3>Newsletter</h3>
+                </div>
+                <p>Subcríbase y reciba nuestras novedades.</p>
+                <form action="#">
+                  <div class="form-row form-check-inline form-group">
+                    <div class="col footer-form">
+                      <input type="email" class="form-control" placeholder="Email Address">
+                      <button type="submit" class="btn section-btn">Subcribe
+                        <i class="fa fa-send"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+                <!-- End form -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-3 bg-footer">
+        <div class="">
+          <p class="m-0 text-center text-white">Copyright &copy; CaC2020</p>
+        </div>
+        <div class="col-md-12 col-sm-12 text-center">
+          <ul class="social-icon">
+            <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+            <li><a href="#" class="fa fa-twitter"></a></li>
+            <li><a href="#" class="fa fa-instagram"></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+   
+     <!--BACK TO TOP-->
+<button class="fa fa-arrow-circle-up" onclick="topFunction()" id="myBtn" title="Go to top"></button>  
+    
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> -->
+    <script src="js/dropdown-hover.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/scrolltop.js"></script>
+    <script src="js/validarInput.js"></script>
+    <script src="js/custom.js"></script>
+   
+  </body>
+</html>
